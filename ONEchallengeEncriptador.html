@@ -16,7 +16,51 @@
 	<button> Copiar </button>
 
 	<script>
-		
+		var input	= document.querySelector("input");
+		var btnCod	= document.querySelector("button");
+		var btnDeco	= document.querySelector("");
+		var btnCopiar	= document.querySelector("");
+		var txt = document.querySelector("div");
+
+		btnCod.onclick = codificar;
+
+
+
+		/*
+		La letra "e" es convertida para "enter"
+		La letra "i" es convertida para "imes"
+		La letra "a" es convertida para "ai"
+		La letra "o" es convertida para "ober"
+		La letra "u" es convertida para "ufat"
+		*/
+
+		var a = "ai";
+		var e = "enter";
+		var i = "imes";
+		var o = "ober";
+		var u = "ufat";
+
+		function codificar() {
+			var msj = input.value;
+			var msjEncriptado;
+			for (var i = 0; i < msj.length; i++) {
+				switch(msj.charAt(i)){
+					case 'a':
+						msjEncriptado += a;
+					case 'e':
+						msjEncriptado += e;
+					case 'i':
+						msjEncriptado += i;
+					case 'o':
+						msjEncriptado += o;
+					case 'u':
+						msjEncriptado += u;
+					default: msjEncriptado += msj.charAt(i);
+				}
+			}
+			return msjEncriptado;
+		}
+
 	</script>
 </body>
 </html>
