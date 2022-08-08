@@ -5,26 +5,19 @@
 </head>
 <body>
 	<h1>Encriptador</h1>
-
-	<input/>
+	<input autofocus="true"/>
+	<button onclick="borrar()"> Borrar </button>
 	<br/><br/>
-	<button> Encriptar </button>
-	<button> Desencriptar </button>
+	<button onclick="encriptar()"> Encriptar </button>
+	<button onclick="desencriptar()"> Desencriptar </button>
 	<br/><br/>
-	<div></div>
+	<textarea readonly=true placeholder="No se encontró ningún mensaje" cols="50" rows="10" style="resize: none;"></textarea>
 	<br/><br/>
-	<button> Copiar </button>
+	<button onclick="copiar()"> Copiar </button>
 
 	<script>
 		var input	= document.querySelector("input");
-		var btnCod	= document.querySelector("button");
-		//var btnDeco	= document.querySelector("button");
-		//var btnCopiar	= document.querySelector("button");
-		var output = document.querySelector("div");
-
-		btnCod.onclick = encriptar;
-		//btnDeco.onclick = desencriptar;
-
+		var output = document.querySelector("textarea");
 
 
 		/*
@@ -44,8 +37,8 @@
 		function encriptar() {
 			var msj = input.value;
 			var msjEncriptado = "";
-			for (var i = 0; i < msj.length; i++) {
-				switch(msj.charAt(i)){
+			for (var j = 0; j < msj.length; j++) {
+				switch(msj.charAt(j)){
 					case 'a':
 						msjEncriptado += a; break;
 					case 'e':
@@ -57,40 +50,57 @@
 					case 'u':
 						msjEncriptado += u; break;
 					default: 
-						msjEncriptado += msj.charAt(i); break;
+						msjEncriptado += msj.charAt(j); break;
 				}
 			}
-			//output.value = msjEncriptado;
-			document.write(msjEncriptado);
+			output.value = msjEncriptado;
+			//document.write(msjEncriptado);
 		}
 
 		function desencriptar(){
 			var msj = input.value;
 			var msjDesencriptado = "";
 			
-			for (var i = 0; i < msj.length; i++) {
-				switch(msj.charAt(i)){
+			for (var j = 0; j < msj.length; j++) {
+				switch(msj.charAt(j)){
 					case 'a':
 											// ai
-						msjDesencriptado += 'a'; i++; break;
+						msjDesencriptado += 'a'; j++; break;
 					case 'e':
 											// enter
-						msjDesencriptado += 'e'; i += 4; break;
+						msjDesencriptado += 'e'; j += 4; break;
 					case 'i':
 											// imes
-						msjDesencriptado += 'i'; i += 3; break;
+						msjDesencriptado += 'i'; j += 3; break;
 					case 'o':
 											// ober
-						msjDesencriptado += 'o'; i += 3; break;
+						msjDesencriptado += 'o'; j += 3; break;
 					case 'u':
 											// ufat
-						msjDesencriptado += 'u'; i += 3; break;
+						msjDesencriptado += 'u'; j += 3; break;
 					default: 
-						msjDesencriptado += msj.charAt(i); break;
+						msjDesencriptado += msj.charAt(j); break;
 				}
 			}
-			//output.value = msjDesencriptado;
-			document.write(msjDesencriptado);
+			output.value = msjDesencriptado;
+			//document.write(msjDesencriptado);
+		}
+
+		function copiar(){
+			// https://www.delftstack.com/es/howto/javascript/javascript-copy-to-clipboard/
+			// Agréguelo al portapapeles usando
+			// document.execCommand('copy')
+			output.focus();
+			output.select();
+
+			document.execCommand('copy');
+
+			input.focus();
+		}
+
+		function borrar(){
+			input.value = "";
+			input.focus();
 		}
 
 	</script>
