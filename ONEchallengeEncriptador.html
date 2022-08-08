@@ -18,11 +18,11 @@
 	<script>
 		var input	= document.querySelector("input");
 		var btnCod	= document.querySelector("button");
-		var btnDeco	= document.querySelector("");
-		var btnCopiar	= document.querySelector("");
-		var txt = document.querySelector("div");
+		//var btnDeco	= document.querySelector("");
+		//var btnCopiar	= document.querySelector("");
+		var output = document.querySelector("div");
 
-		btnCod.onclick = codificar;
+		btnCod.onclick = encriptar;
 
 
 
@@ -40,25 +40,56 @@
 		var o = "ober";
 		var u = "ufat";
 
-		function codificar() {
+		function encriptar() {
 			var msj = input.value;
 			var msjEncriptado;
 			for (var i = 0; i < msj.length; i++) {
 				switch(msj.charAt(i)){
 					case 'a':
-						msjEncriptado += a;
+						msjEncriptado += a; break;
 					case 'e':
-						msjEncriptado += e;
+						msjEncriptado += e; break;
 					case 'i':
-						msjEncriptado += i;
+						msjEncriptado += i; break;
 					case 'o':
-						msjEncriptado += o;
+						msjEncriptado += o; break;
 					case 'u':
-						msjEncriptado += u;
-					default: msjEncriptado += msj.charAt(i);
+						msjEncriptado += u; break;
+					default: 
+						msjEncriptado += msj.charAt(i); break;
 				}
 			}
-			return msjEncriptado;
+
+			output.value = msjEncriptado;
+		}
+
+		function desencriptar(){
+			var msj = input.value;
+			var msjDesencriptado;
+			
+			for (var i = 0; i < msj.length; i++) {
+				switch(msj.charAt(i)){
+					case 'a':
+											// ai
+						msjDesencriptado += 'a'; i++; break;
+					case 'e':
+											// enter
+						msjDesencriptado += 'e'; i += 4; break;
+					case 'i':
+											// imes
+						msjDesencriptado += 'i'; i += 3; break;
+					case 'o':
+											// ober
+						msjDesencriptado += 'o'; i += 3; break;
+					case 'u':
+											// ufat
+						msjDesencriptado += 'u'; i += 3; break;
+					default: 
+						msjDesencriptado += msj.charAt(i); break;
+				}
+				output.value = msjEncriptado;
+			}
+
 		}
 
 	</script>
