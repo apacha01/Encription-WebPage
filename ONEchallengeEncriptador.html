@@ -35,20 +35,20 @@ Extras:
 </head>
 <body>
 	<h1>Encriptador</h1>
-	<input autofocus="true"/ placeholder="Ingrese un texto en minúscula">
+	<textarea class="input" autofocus="true" placeholder="Ingrese un texto en minúscula y sin tildes." 
+				cols=50 rows=5 style="resize: none;"></textarea>
 	<button onclick="borrar()"> Borrar </button>
 	<br/><br/>
 	<button onclick="encriptar()"> Encriptar </button>
 	<button onclick="desencriptar()"> Desencriptar </button>
 	<br/><br/>
-	<textarea readonly=true placeholder="No se encontró ningún mensaje" cols="50" rows="10" style="resize: none;"></textarea>
+	<textarea class="output" readonly=true placeholder="No se encontró ningún mensaje." cols=50 rows=10 style="resize: none;"></textarea>
 	<br/><br/>
 	<button onclick="copiar()"> Copiar </button>
 
 	<script>
-		var input	= document.querySelector("input");
-		var output = document.querySelector("textarea");
-
+		var input	= document.querySelector(".input");
+		var output = document.querySelector(".output");
 
 		/*
 		La letra "e" es convertida para "enter"
@@ -69,14 +69,19 @@ Extras:
 			var msjEncriptado = "";
 			for (var j = 0; j < msj.length; j++) {
 				switch(msj.charAt(j)){
+					case 'á':
 					case 'a':
 						msjEncriptado += a; break;
+					case 'é':
 					case 'e':
 						msjEncriptado += e; break;
+					case 'í':
 					case 'i':
 						msjEncriptado += i; break;
+					case 'ó':
 					case 'o':
 						msjEncriptado += o; break;
+					case 'ú':
 					case 'u':
 						msjEncriptado += u; break;
 					default: 
@@ -84,7 +89,6 @@ Extras:
 				}
 			}
 			output.value = msjEncriptado;
-			//document.write(msjEncriptado);
 		}
 
 		function desencriptar(){
@@ -94,21 +98,20 @@ Extras:
 			for (var j = 0; j < msj.length; j++) {
 				switch(msj.charAt(j)){
 					case 'a':
-						if (msj.substring(j,j+2) == a) {msjDesencriptado += 'a'; j++;	 break;}
+						if (msj.substring(j, j + a.length) == a) {msjDesencriptado += 'a'; j += a.length-1;	break;}
 					case 'e':
-						if (msj.substring(j,j+5) == e) {msjDesencriptado += 'e'; j += 4; break;}
+						if (msj.substring(j, j + e.length) == e) {msjDesencriptado += 'e'; j += e.length-1; break;}
 					case 'i':
-						if (msj.substring(j,j+4) == i) {msjDesencriptado += 'i'; j += 3; break;}
+						if (msj.substring(j, j + i.length) == i) {msjDesencriptado += 'i'; j += i.length-1; break;}
 					case 'o':
-						if (msj.substring(j,j+4) == o) {msjDesencriptado += 'o'; j += 3; break;}
+						if (msj.substring(j, j + o.length) == o) {msjDesencriptado += 'o'; j += o.length-1; break;}
 					case 'u':
-						if (msj.substring(j,j+4) == u) {msjDesencriptado += 'u'; j += 3; break;}
+						if (msj.substring(j, j + u.length) == u) {msjDesencriptado += 'u'; j += u.length-1; break;}
 					default:
 						msjDesencriptado += msj.charAt(j); break;
 				}
 			}
 			output.value = msjDesencriptado;
-			//document.write(msjDesencriptado);
 		}
 
 		function copiar(){
