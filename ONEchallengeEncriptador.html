@@ -18,11 +18,12 @@
 	<script>
 		var input	= document.querySelector("input");
 		var btnCod	= document.querySelector("button");
-		//var btnDeco	= document.querySelector("");
-		//var btnCopiar	= document.querySelector("");
+		//var btnDeco	= document.querySelector("button");
+		//var btnCopiar	= document.querySelector("button");
 		var output = document.querySelector("div");
 
 		btnCod.onclick = encriptar;
+		//btnDeco.onclick = desencriptar;
 
 
 
@@ -42,7 +43,7 @@
 
 		function encriptar() {
 			var msj = input.value;
-			var msjEncriptado;
+			var msjEncriptado = "";
 			for (var i = 0; i < msj.length; i++) {
 				switch(msj.charAt(i)){
 					case 'a':
@@ -59,13 +60,13 @@
 						msjEncriptado += msj.charAt(i); break;
 				}
 			}
-
-			output.value = msjEncriptado;
+			//output.value = msjEncriptado;
+			document.write(msjEncriptado);
 		}
 
 		function desencriptar(){
 			var msj = input.value;
-			var msjDesencriptado;
+			var msjDesencriptado = "";
 			
 			for (var i = 0; i < msj.length; i++) {
 				switch(msj.charAt(i)){
@@ -87,9 +88,9 @@
 					default: 
 						msjDesencriptado += msj.charAt(i); break;
 				}
-				output.value = msjEncriptado;
 			}
-
+			//output.value = msjDesencriptado;
+			document.write(msjDesencriptado);
 		}
 
 	</script>
