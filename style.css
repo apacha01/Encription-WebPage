@@ -7,22 +7,15 @@ h1{
 }
 
 .contenedor{
-	width: 90%;
-	height: 90%;
-	margin: 0 5% 0 5%;
+	width: 100%;
+	height: 944px;
 	background-color: black;
 	display: flex;
 	justify-content: space-around;
 }
 
-.derecha{
-	height: 944px;
-	width: 30%;
-	background-color: blue;
-}
-
 .izquierda{
-	height: 944px;
+	height: 100%;
 	width: 50%;
 	background-color: red;
 }
@@ -38,10 +31,15 @@ h1{
 }
 
 .output{
-	margin: 1% 10px 1% 10px;
-	width: 100%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 1%;
+	margin-bottom: 1%;
+	width: 95.5%;
 	height: 85%;
 	background-color: white;
+	border-radius: 30px;
+	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.18);
 }
 
 button{
@@ -49,10 +47,11 @@ button{
 	background-color: #d8dfe8;
 	border-radius: 24px;
 	width: 49%;
-	height: 5%;
+	height: 50%;
 	font-size: 16px;
 	color: #22228b;
 	text-align: middle;
+	max-height: 47.2px;
 }
 
 button:hover{
@@ -75,13 +74,21 @@ textarea:focus{
 	outline: none;
 }
 
+.btn_izq{
+	height: 13%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .btn_cripto{
 	width: 95%;
-	height: 5%;
+	height: 50%;
 	margin-left: 50%;
 	transform: translateX(-50%);
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .encriptar{
@@ -95,12 +102,12 @@ textarea:focus{
 .borrar{
 	margin-left: 50%;
 	transform: translateX(-50%);
-	margin-bottom: 5px;
 	width: 95.5%;
-	height: 5%;
 }
 
 .copiar{
+	margin-left: 50%;
+	transform: translateX(-50%);
 	margin-top: 30px;
 	width: 95.5%;
 }
