@@ -7,11 +7,11 @@ h1{
 }
 
 .contenedor{
-	width: 100%;
-	height: 944px;
+	width: 90%;
+	height: 500px;
 	background-color: #e5e5e5;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 }
 
 .izquierda{
@@ -31,7 +31,7 @@ h1{
 	transform: translateX(-50%);
 	margin-top: 1%;
 	margin-bottom: 1%;
-	width: 95.5%;
+	width: 95%;
 	height: 85%;
 	background-color: #e5e5e5;
 }
@@ -41,11 +41,12 @@ h1{
 	transform: translateX(-50%);
 	margin-top: 1%;
 	margin-bottom: 1%;
-	width: 95.5%;
-	height: 85%;
+	width: 95%;
+	height: 80%;
 	background-color: white;
 	border-radius: 30px;
 	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.18);
+	padding: 5%;
 }
 
 button{
@@ -53,10 +54,11 @@ button{
 	background-color: #d8dfe8;
 	border-radius: 24px;
 	width: 49%;
-	height: 50%;
+	height: 49%;
 	font-size: 16px;
 	color: #22228b;
 	text-align: middle;
+	text-align: center;
 	max-height: 47.2px;
 }
 
@@ -84,18 +86,19 @@ textarea:focus{
 	height: 13%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .btn_der{
-	height: 13%;
+	height: 15%;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
 .btn_cripto{
 	width: 95%;
-	height: 50%;
+	height: 49%;
 	margin-left: 50%;
 	transform: translateX(-50%);
 	display: flex;
@@ -114,11 +117,11 @@ textarea:focus{
 .borrar{
 	margin-left: 50%;
 	transform: translateX(-50%);
-	width: 95.5%;
+	width: 95%;
+	height: 49%;
 }
 
 .copiar{
-	margin-left: 50%;
-	transform: translateX(-50%);
-	width: 95.5%;
+	margin-top: 1.5%;
+	width: 75%;
 }
